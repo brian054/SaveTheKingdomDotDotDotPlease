@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.35027.167
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SaveTheKingdomDotDotDotPlease", "SaveTheKingdomDotDotDotPlease.csproj", "{8192DD00-DBF9-402A-A0EB-854F5383D77E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8192DD00-DBF9-402A-A0EB-854F5383D77E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8192DD00-DBF9-402A-A0EB-854F5383D77E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8192DD00-DBF9-402A-A0EB-854F5383D77E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8192DD00-DBF9-402A-A0EB-854F5383D77E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4395A69D-30F5-4DF5-AA85-2A84C2C7A3E5}
+	EndGlobalSection
+EndGlobal
