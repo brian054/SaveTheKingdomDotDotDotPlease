@@ -1,26 +1,32 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Input;
+using System;
+using System.Diagnostics;
 using static SaveTheKingdomDotDotDotPlease.Enums;
 
 namespace SaveTheKingdomDotDotDotPlease
 {
-    internal class Map
+    internal class Overworld
     {
-        int tileSize = Globals.TileSize;
-        int scaledTileSize = Globals.ScaledTileSize;
+        int tileSize = Globals.WorldTileSize;
+        int scaledTileSize = Globals.ScaledWorldTileSize;
 
         private Texture2D mapTexture;
-        private Texture2D spriteSheet;
+        //private Texture2D SpriteSheet;
 
         Color[] mapData;
 
-        public Map(int width, int height, Texture2D mapTexture, Texture2D spriteSheet)
+        //Vector2 playerPos;
+        public Overworld(Texture2D mapTexture)
         {
             this.mapTexture = mapTexture;
             mapData = new Color[mapTexture.Width * mapTexture.Height];
             mapTexture.GetData(mapData);
 
-            this.spriteSheet = spriteSheet;
+            //this.SpriteSheet = SpriteSheet;
+           // playerPos.X = 0;
+            //playerPos.Y = 0;
         }
 
         private Rectangle GetSourceRectangleForTile(TileType tileType)
@@ -51,7 +57,15 @@ namespace SaveTheKingdomDotDotDotPlease
                 return TileType.Unknown;  // For any other colors
         }
 
-        public void Draw(SpriteBatch sb)
+        public void Update(GameTime gameTime) {
+            //var keyState = Keyboard.GetState();
+            //if (keyState.IsKeyDown(Keys.D))
+            //{
+
+            //} 
+        }
+
+        public void Draw(SpriteBatch sb) // might pass player in?
         {
             for (int x = 0; x < mapTexture.Width; x++) 
             {
@@ -65,7 +79,7 @@ namespace SaveTheKingdomDotDotDotPlease
 
                     Rectangle destinationRectangle = new Rectangle(x * scaledTileSize, y * scaledTileSize, scaledTileSize, scaledTileSize);
 
-                    sb.Draw(spriteSheet, destinationRectangle, sourceRectangle, Color.White);
+                    sb.Draw(Globals.SpriteSheet, destinationRectangle, sourceRectangle, Color.White);
                 }
             }
         }

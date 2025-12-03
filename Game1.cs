@@ -11,12 +11,13 @@ namespace SaveTheKingdomDotDotDotPlease
         private SpriteBatch spriteBatch;
 
         Texture2D rectTexture;
-        Texture2D spriteSheet;
+        //Texture2D SpriteSheet;
         int tileSize;
         int scaledTileSize;
         KeyboardState keyboardState;
 
-        Map map;
+        Overworld map;
+        Player steve;
 
         public Game1()
         {
@@ -34,9 +35,10 @@ namespace SaveTheKingdomDotDotDotPlease
             // TODO: Add your initialization logic here
 
             Texture2D mapTexture = Content.Load<Texture2D>("bigMap");
-            spriteSheet = Content.Load<Texture2D>("SpriteSheet");
+            Globals.SpriteSheet = Content.Load<Texture2D>("SpriteSheet");
 
-            map = new(20, 20, mapTexture, spriteSheet);
+            map = new(mapTexture);
+            steve = new();
 
             base.Initialize();
         }
@@ -54,6 +56,8 @@ namespace SaveTheKingdomDotDotDotPlease
                 Exit();
 
             // TODO: Add your update logic here
+            map.Update(gameTime);
+            steve.Update(gameTime);
 
             base.Update(gameTime);
         }
@@ -64,6 +68,7 @@ namespace SaveTheKingdomDotDotDotPlease
 
             spriteBatch.Begin(SpriteSortMode.Deferred, BlendState.AlphaBlend, SamplerState.PointClamp, null, null);
             map.Draw(spriteBatch);
+            steve.Draw(spriteBatch);
             spriteBatch.End();
 
             base.Draw(gameTime);
