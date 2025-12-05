@@ -15,5 +15,13 @@ namespace SaveTheKingdomDotDotDotPlease
             Stone,
             Unknown
         }
+
+        public enum Direction
+        {
+            up,
+            left,
+            right,
+            down
+        }
     }
 }

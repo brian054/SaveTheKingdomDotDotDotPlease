@@ -38,7 +38,7 @@ namespace SaveTheKingdomDotDotDotPlease
             Globals.SpriteSheet = Content.Load<Texture2D>("SpriteSheet");
 
             map = new(mapTexture);
-            steve = new();
+            steve = new(map);
 
             base.Initialize();
         }
