@@ -45,6 +45,38 @@ namespace SaveTheKingdomDotDotDotPlease
             var keyState = Keyboard.GetState();
 
             // Move player
+
+            /*
+                I figured surely there was a way to reduce the code below, 
+                plus...what happens when you want to add arrow keys, or 
+                allow the user to customize their controls for movement.
+
+                Could add an InputManager.cs to handle Input so then Player just asks
+                the InputManager "am I moving any direction, and if so which way, idc what actual 
+                button was pressed"
+
+                For now I'll just add:
+
+                var keyDirectionMap = new Dictionary<Keys, Direction>
+                {
+                    { Keys.W, Direction.up },
+                    { Keys.A, Direction.left },
+                    { Keys.S, Direction.down },
+                    { Keys.D, Direction.right },
+                };
+
+                foreach (var pair in keyDirectionMap)
+                {
+                    if (keyState.IsKeyDown(pair.Key))
+                    {
+                        StartMove(pair.Value);
+                        break;
+                    }
+                }
+
+                into this class. 
+            */
+
             if (!isMoving)
             {
                 if (keyState.IsKeyDown(Keys.W))
