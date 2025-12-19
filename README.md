@@ -1,6 +1,6 @@
 # SaveTheKingdomDotDotDotPlease
 
-- [] Scene/State switching
+- [ ] Scene/State switching
     - [ ]Overworld ⇄ Combat
     - [ ]Overworld ⇄ Overworld (location transitions)
 - [ ] Camera follow + clamp
